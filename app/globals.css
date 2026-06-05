@@ -1,26 +1,72 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: dark;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  background: #040202;
+  color: #f7f2ec;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html {
+  min-height: 100%;
+  scroll-behavior: smooth;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  min-height: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100%;
+  --brand-red: #b91c1c; /* intenso mexicano */
+  --brand-orange: #f97316;
+  --brand-yellow: #f59e0b;
+  --bg-warm: #fff7f0; /* ligero y cálido */
+  --card-bg: #fffaf5;
+  color: #0b0b0b;
+  background: linear-gradient(
+    180deg,
+    rgba(249, 115, 22, 0.06) 0%,
+    rgba(185, 28, 28, 0.03) 30%,
+    var(--bg-warm) 100%
+  );
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+::selection {
+  background: var(--brand-yellow);
+  color: #0b0b0b;
+}
+
+/* Decorative papel picado strip used by NavBar */
+.papel-picado {
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--brand-red) 0 20px,
+    var(--brand-orange) 20px 40px,
+    var(--brand-yellow) 40px 60px
+  );
+  height: 8px;
+}
+
+/* Card and container helpers */
+.birria-card {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 250, 245, 0.9)
+  );
+  border-radius: 1.25rem;
+}
+
+.no-overflow {
+  overflow-x: hidden;
 }
